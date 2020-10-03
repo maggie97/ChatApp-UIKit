@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AcO-vQ-8OU">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -51,7 +52,7 @@
                                                         <rect key="frame" x="0.0" y="20" width="374" height="30"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="16"/>
-                                                        <state key="normal" title="Do you not have account?">
+                                                        <state key="normal" title="Are you forget your password?">
                                                             <color key="titleColor" systemColor="secondaryLabelColor"/>
                                                         </state>
                                                     </button>
@@ -145,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="-1346" y="-157"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="YZg-eI-V57">
             <objects>
-                <viewController storyboardIdentifier="register" id="2Ig-Dd-mxo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="register" id="2Ig-Dd-mxo" customClass="RegisterViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="caJ-jt-0Jw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,13 +158,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ho-m9-Wop">
-                                        <rect key="frame" x="149.5" y="53" width="115" height="33.5"/>
+                                        <rect key="frame" x="149.5" y="144" width="115" height="33.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="yI4-0M-OeC">
-                                        <rect key="frame" x="20" y="136.5" width="374" height="589"/>
+                                        <rect key="frame" x="20" y="227.5" width="374" height="407"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lo6-dT-VUi">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -220,26 +221,28 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="continue" secureTextEntry="YES"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Birthday:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aw-Hy-o1z">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aw-Hy-o1z">
                                                 <rect key="frame" x="0.0" y="272.5" width="374" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="6G3-eT-VJ1">
-                                                <rect key="frame" x="0.0" y="293" width="374" height="216"/>
-                                            </datePicker>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iE8-MR-ve0">
+                                                <rect key="frame" x="0.0" y="293" width="374" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="continue" secureTextEntry="YES"/>
+                                            </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYc-cm-uaW">
-                                                <rect key="frame" x="0.0" y="509" width="374" height="50"/>
+                                                <rect key="frame" x="0.0" y="327" width="374" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="dVV-Ca-cH2"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFA-OG-pf1">
-                                                <rect key="frame" x="0.0" y="559" width="374" height="30"/>
+                                                <rect key="frame" x="0.0" y="377" width="374" height="30"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                                <state key="normal" title="Button">
+                                                <state key="normal" title="Register">
                                                     <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
                                                 </state>
                                             </button>
@@ -247,11 +250,11 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="8Ho-m9-Wop" firstAttribute="top" relation="lessThanOrEqual" secondItem="ZCV-jr-uBW" secondAttribute="topMargin" constant="92" id="6qq-nQ-rF7"/>
                                     <constraint firstItem="8Ho-m9-Wop" firstAttribute="leading" secondItem="4IN-vx-tzm" secondAttribute="leading" constant="149.5" id="9Et-6h-C7d"/>
                                     <constraint firstAttribute="trailing" secondItem="yI4-0M-OeC" secondAttribute="trailing" constant="20" id="Kc1-3Y-JXZ"/>
                                     <constraint firstItem="yI4-0M-OeC" firstAttribute="centerY" secondItem="ZCV-jr-uBW" secondAttribute="centerY" id="SxO-cE-Krq"/>
-                                    <constraint firstItem="6G3-eT-VJ1" firstAttribute="centerX" secondItem="ZCV-jr-uBW" secondAttribute="centerX" id="Tj4-rN-qyY"/>
-                                    <constraint firstItem="yI4-0M-OeC" firstAttribute="top" secondItem="8Ho-m9-Wop" secondAttribute="bottom" constant="50" id="UKG-c8-Vib"/>
+                                    <constraint firstItem="yI4-0M-OeC" firstAttribute="top" relation="lessThanOrEqual" secondItem="8Ho-m9-Wop" secondAttribute="bottom" constant="50" id="UKG-c8-Vib"/>
                                     <constraint firstAttribute="bottom" secondItem="yI4-0M-OeC" secondAttribute="bottom" constant="99.5" id="aDT-Ja-MJL"/>
                                     <constraint firstItem="8Ho-m9-Wop" firstAttribute="centerX" secondItem="yI4-0M-OeC" secondAttribute="centerX" id="ag4-ME-hwp"/>
                                     <constraint firstItem="yI4-0M-OeC" firstAttribute="leading" secondItem="4IN-vx-tzm" secondAttribute="leading" constant="20" id="frR-MT-fee"/>

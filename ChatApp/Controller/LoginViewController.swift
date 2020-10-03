@@ -35,14 +35,21 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginClick(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "LoginFlow", bundle: Bundle.main)
-        if let contactList = storyboard.instantiateViewController(identifier: "contactsList") as? UIViewController{
-            UIApplication.shared.windows[0].rootViewController = contactList
+        Authentication.instance.singIn(emailTextField.text ?? "", passwordTextField.text ?? "") {
+            if let contactList = storyboard.instantiateViewController(withIdentifier: IdentifiersViews.contactsList.rawValue) as? UIViewController {
+                UIApplication.shared.windows[0].rootViewController = contactList
+            }
+        } onFailure: {[weak self] (message) in
+            let alertAction = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            alertAction.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self?.present(alertAction, animated: true, completion: nil)
         }
+        
     }
     
     @IBAction func registerClick(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "LoginFlow", bundle: Bundle.main)
-        if let contactList = storyboard.instantiateViewController(identifier: "register") as? UIViewController{
+        if let contactList = storyboard.instantiateViewController(withIdentifier: "register") as? UIViewController{
             UIApplication.shared.windows[0].rootViewController = contactList
         }
     }
