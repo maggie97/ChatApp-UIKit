@@ -12,19 +12,17 @@ end
 target 'ChatApp' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Database'
   # Pods for ChatApp
 
   target 'ChatAppTests' do
     inherit! :search_paths
     # Pods for testing
-
-    pod 'Firebase/Analytics'
-    pod 'Firebase/Auth'
-    pod 'Firebase/Core'
-    pod 'Firebase/Firestore'
-    pod 'FirebaseFirestoreSwift'
-    pod 'Firebase/Database'
   end
 
   target 'ChatAppUITests' do
