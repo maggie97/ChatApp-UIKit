@@ -18,7 +18,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        Authentication.instance.detectCurrentUser(onSuccessfull: goToContactsList)
         // Do any additional setup after loading the view.
     }
     
@@ -34,12 +34,7 @@ class LoginViewController: UIViewController {
     */
     
     @IBAction func loginClick(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "LoginFlow", bundle: Bundle.main)
-        Authentication.instance.singIn(emailTextField.text ?? "", passwordTextField.text ?? "") {
-            if let contactList = storyboard.instantiateViewController(withIdentifier: IdentifiersViews.contactsList.rawValue) as? UIViewController {
-                UIApplication.shared.windows[0].rootViewController = contactList
-            }
-        } onFailure: {[weak self] (message) in
+        Authentication.instance.singIn(emailTextField.text ?? "", passwordTextField.text ?? "", onSuccessfull: goToContactsList){ [weak self] (message) in
             let alertAction = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
             alertAction.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self?.present(alertAction, animated: true, completion: nil)
@@ -47,11 +42,21 @@ class LoginViewController: UIViewController {
         
     }
     
-    @IBAction func registerClick(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "LoginFlow", bundle: Bundle.main)
-        if let contactList = storyboard.instantiateViewController(withIdentifier: "register") as? UIViewController{
+    func goToContactsList(){
+        let storyboard = UIStoryboard(name: Storyboard.ContactsFlow.rawValue, bundle: Bundle.main)
+        if let contactList = storyboard.instantiateViewController(withIdentifier: IdentifiersViews.navigationContact.rawValue) as? UINavigationController {
             UIApplication.shared.windows[0].rootViewController = contactList
         }
     }
     
+    @IBAction func registerClick(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: Storyboard.LoginFlow.rawValue, bundle: Bundle.main)
+        if let contactList = storyboard.instantiateViewController(withIdentifier: "register") as? RegisterViewController{
+            UIApplication.shared.windows[0].rootViewController = contactList
+        }
+    }
+    
+    @IBAction func forgotPasswordClick(_ sender: Any) {
+       
+    }
 }

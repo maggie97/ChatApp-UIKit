@@ -13,11 +13,10 @@ struct User: Codable{
     let lastName: String
     let email: String
     let contactNumber: String
-    let birthday: Date
     var friends: [User] = []
     let avatarImage: String
     
     enum CodingKeys: String, CodingKey{
-        case firstName, lastName, email, contactNumber, birthday,avatarImage
+        case firstName, lastName, email, contactNumber,avatarImage
     }
 }

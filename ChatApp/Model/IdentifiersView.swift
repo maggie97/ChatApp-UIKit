@@ -7,7 +7,10 @@
 
 import Foundation
 enum IdentifiersViews: String{
-    case contactsList
+    case ContactItemViewController
     case register
     case login
+    case navigationContact
+    case ContactCell
+    
 }
