@@ -44,11 +44,11 @@ class RegisterViewController: UIViewController {
             self.present(alertAction, animated: true, completion: nil)
             return
         }
-        Authentication.instance.register(User(firstName: firstname , lastName: lastname, email: email, contactNumber: number, avatarImage: ""), password: password) {
+        Authentication.instance.register(User(firstName: firstname , lastName: lastname, email: email, contactNumber: number, avatarImage: ""), password: password, onSuccessfull:  {
             if let contactList = storyboard.instantiateViewController(withIdentifier: IdentifiersViews.navigationContact.rawValue) as? UINavigationController {
                 UIApplication.shared.windows[0].rootViewController = contactList
             }
-        } onFailure: {[weak self] (message) in
+        }) {[weak self] (message) in
             let alertAction = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
             alertAction.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self?.present(alertAction, animated: true, completion: nil)
