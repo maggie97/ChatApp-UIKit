@@ -1,4 +1,4 @@
-*.plist
+#*.plist
 Podfile.lock
 
 # Pods/
