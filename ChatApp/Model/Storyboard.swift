@@ -9,4 +9,5 @@ import Foundation
 
 enum Storyboard: String {
     case LoginFlow
+    case ContactsFlow
 }
