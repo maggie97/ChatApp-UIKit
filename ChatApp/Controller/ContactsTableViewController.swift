@@ -9,10 +9,19 @@ import UIKit
 
 class ContactsTableViewController: UITableViewController {
 
+    var friends: [Friend]?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: IdentifiersViews.ContactCell.rawValue, bundle: nil), forCellReuseIdentifier: IdentifiersViews.ContactCell.rawValue)
+        do {
+            try Database.instance.getFriends(onSuccess: {[weak self] (friends) in
+                self?.friends = friends.friends
+                self?.tableView.reloadData()
+            })
+        } catch let error{
+            print(error)
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -26,23 +35,22 @@ class ContactsTableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return  1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return friends?.count ?? 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: IdentifiersViews.ContactCell.rawValue, for: indexPath) as? ContactItemViewCell else {
             let cell = UITableViewCell()
-            cell.textLabel?.text = "Hi"
-            cell.detailTextLabel?.text = "uno"
             return cell
         }
-
+        cell.nameFriendLabel.text = friends?[indexPath.row].userId
+        cell.lastMessageLabel.text = friends?[indexPath.row].lastMessageId
         // Configure the cell...
 
         return cell
@@ -52,7 +60,7 @@ class ContactsTableViewController: UITableViewController {
         do {
             try Authentication.instance.signOut()
             let storyboard = UIStoryboard(name: Storyboard.LoginFlow.rawValue, bundle: Bundle.main)
-            if let contactList = storyboard.instantiateViewController(withIdentifier: IdentifiersViews.login.rawValue) as? RegisterViewController{
+            if let contactList = storyboard.instantiateViewController(withIdentifier: IdentifiersViews.login.rawValue) as? LoginViewController{
                 UIApplication.shared.windows[0].rootViewController = contactList
             }
         } catch let error {

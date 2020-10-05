@@ -87,6 +87,11 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="IQf-LI-8SB" id="kDn-ny-YiS"/>
+                <outlet property="lastMessageLabel" destination="twB-Hg-Dl2" id="LIX-Fn-t4p"/>
+                <outlet property="nameFriendLabel" destination="Brb-TQ-frE" id="aiw-cI-UOC"/>
+            </connections>
             <point key="canvasLocation" x="140.57971014492756" y="94.084821428571431"/>
         </tableViewCell>
     </objects>

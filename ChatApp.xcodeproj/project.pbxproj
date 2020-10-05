@@ -19,6 +19,8 @@
 		4D8163DC2528DE24008DE067 /* MessagChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8163DB2528DE24008DE067 /* MessagChat.swift */; };
 		4D8164382528EEDA008DE067 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D8164372528EEDA008DE067 /* GoogleService-Info.plist */; };
 		4D8164462528F4B8008DE067 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8164452528F4B8008DE067 /* RegisterViewController.swift */; };
+		4DCB1AE2252A6D0D00E09006 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB1AE1252A6D0D00E09006 /* Database.swift */; };
+		4DCB1AEF252A835300E09006 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB1AEE252A835300E09006 /* Friend.swift */; };
 		4DD5C1B125296D6500A6ECD3 /* ContactsFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5C1B025296D6500A6ECD3 /* ContactsFlow.storyboard */; };
 		4DD5C1BA25297ECA00A6ECD3 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5C1B925297ECA00A6ECD3 /* ContactsTableViewController.swift */; };
 		4DF484262527FD35008B1386 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF484252527FD35008B1386 /* AppDelegate.swift */; };
@@ -64,6 +66,8 @@
 		4D8163DB2528DE24008DE067 /* MessagChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagChat.swift; sourceTree = "<group>"; };
 		4D8164372528EEDA008DE067 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4D8164452528F4B8008DE067 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4DCB1AE1252A6D0D00E09006 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		4DCB1AEE252A835300E09006 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		4DD5C1B025296D6500A6ECD3 /* ContactsFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContactsFlow.storyboard; sourceTree = "<group>"; };
 		4DD5C1B925297ECA00A6ECD3 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
 		4DF484222527FD35008B1386 /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,11 +189,13 @@
 		4DF4846725280B28008B1386 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4DCB1AEE252A835300E09006 /* Friend.swift */,
 				4D81637225283441008DE067 /* User.swift */,
 				4D8163B12528DA60008DE067 /* Autenticaton.swift */,
 				4D8163B62528DA88008DE067 /* Storyboard.swift */,
 				4D8163BB2528DAA2008DE067 /* IdentifiersView.swift */,
 				4D8163DB2528DE24008DE067 /* MessagChat.swift */,
+				4DCB1AE1252A6D0D00E09006 /* Database.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -470,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D8163AD2528D453008DE067 /* LoginViewController.swift in Sources */,
+				4DCB1AEF252A835300E09006 /* Friend.swift in Sources */,
 				4D8164462528F4B8008DE067 /* RegisterViewController.swift in Sources */,
 				4DD5C1BA25297ECA00A6ECD3 /* ContactsTableViewController.swift in Sources */,
 				4D8163BC2528DAA2008DE067 /* IdentifiersView.swift in Sources */,
@@ -480,6 +487,7 @@
 				4DF484262527FD35008B1386 /* AppDelegate.swift in Sources */,
 				4D81636D25283417008DE067 /* ContactItemViewCell.swift in Sources */,
 				4D8163DC2528DE24008DE067 /* MessagChat.swift in Sources */,
+				4DCB1AE2252A6D0D00E09006 /* Database.swift in Sources */,
 				4DF484282527FD35008B1386 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
