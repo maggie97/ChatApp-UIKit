@@ -14,14 +14,6 @@ class ContactsTableViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: IdentifiersViews.ContactCell.rawValue, bundle: nil), forCellReuseIdentifier: IdentifiersViews.ContactCell.rawValue)
-        /*do {
-            try DatabaseManager.instance.getFriends(onSuccess: {[weak self] (friends) in
-                self?.friends = friends
-                self?.tableView.reloadData()
-            })
-        } catch let error{
-            print(error)
-        }*/
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -62,7 +54,6 @@ class ContactsTableViewController: UITableViewController {
         cell.nameFriendLabel.text = friends?[indexPath.row].userId
         cell.lastMessageLabel.text = friends?[indexPath.row].lastMessageId
         cell.setup(idLastMessage: friends?[indexPath.row].lastMessageId)
-        // Configure the cell...
 
         return cell
     }

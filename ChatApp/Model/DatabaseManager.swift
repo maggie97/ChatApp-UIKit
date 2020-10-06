@@ -47,21 +47,6 @@ class DatabaseManager {
         guard let user = Auth.auth().currentUser, let email = user.email else{
             throw DatabaseError.noUserLogged
         }
-        /*
-        db.collection(DatabaseCollections.users.rawValue).document("\(email)").getDocument { (documentSnapshot, error) in
-            guard let document = documentSnapshot, error == nil else{
-                return
-            }
-            
-            if let friendsData = document.get(DatabaseCollections.friends.rawValue) as? [[String: Any]]{
-                let friends = Friends(dict: friendsData)
-                success(friends)
-            }
-            else {
-                print("error")
-            }
-        }
-        */
         db.collection(DatabaseCollections.users.rawValue ).document("\(email)").collection(DatabaseCollections.friends.rawValue).getDocuments { (querySnapshot, error) in
             guard let query = querySnapshot, error == nil else{
                 return
