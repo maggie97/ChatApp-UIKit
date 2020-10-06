@@ -28,22 +28,21 @@ class Authentication {
     }
     
     func register(_ user: User, password: String, onSuccessfull success: @escaping () -> Void, onFailure fail: @escaping (String) -> Void){
-        Auth.auth().createUser(withEmail: user.email , password: password) { authResult, error in
+        Auth.auth().createUser(withEmail: user.email ?? "" , password: password) { authResult, error in
             
             guard let _ = authResult, error == nil else {
                 fail(error!.localizedDescription )
                 return
             }
             success()
-            let messageDefault = MessageChat(emailEmisor: user.email, emailReceptor: "ChatApp", message: "Welcome to the ChatApp", date: Date())
-            
-            let friend = Friend( user.email ,  messageDefault.id)
+            let messageDefault = MessageChat(by: "ChatApp", from: user.email, "Welcome the chatApp", date: Date())
+            let friend = Friend( messageDefault.emailEmisor!,  messageDefault.id!)
             var user = user
             user.friends.append(friend)
             
             do {
-                try Database.instance.addUser(user)
-                try Database.instance.addMessage(message: messageDefault)
+                try DatabaseManager.instance.addUser(user)
+                try DatabaseManager.instance.addMessage(message: messageDefault)
             }catch let error{
                 print("Error writing city to Firestore: \(error)")
             }

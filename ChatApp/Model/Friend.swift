@@ -20,7 +20,7 @@ struct Friend: Codable {
         lastMessageId = dictionary[CodingKeys.lastMessageId.rawValue] as? String
     }
     
-    init(_ userId: String, _ lastMessageId: String) {
+    init(_ userId: String, _ lastMessageId: String?) {
         self.userId = userId
         self.lastMessageId = lastMessageId
     }

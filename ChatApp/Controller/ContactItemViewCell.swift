@@ -17,8 +17,13 @@ class ContactItemViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func setup(){
-        
+    func setup(idLastMessage: String?){
+        if let idMessage = idLastMessage{
+            DatabaseManager.instance.getMessage(with: idMessage) {[weak self] (message) in
+                self?.lastMessageLabel.text = message.message
+                self?.dateLabel.text = message.getDate()
+            }
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

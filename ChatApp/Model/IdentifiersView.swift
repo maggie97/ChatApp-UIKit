@@ -12,5 +12,5 @@ enum IdentifiersViews: String{
     case login
     case navigationContact
     case ContactCell
-    
+    case UserEmailCell
 }

@@ -44,7 +44,7 @@ class RegisterViewController: UIViewController {
             self.present(alertAction, animated: true, completion: nil)
             return
         }
-        Authentication.instance.register(User(firstName: firstname , lastName: lastname, email: email, contactNumber: number, avatarImage: ""), password: password, onSuccessfull:  {
+        Authentication.instance.register(User(firstName: firstname , lastName: lastname, email: email, contactNumber: number, avatarImg: ""), password: password, onSuccessfull:  {
             if let contactList = storyboard.instantiateViewController(withIdentifier: IdentifiersViews.navigationContact.rawValue) as? UINavigationController {
                 UIApplication.shared.windows[0].rootViewController = contactList
             }

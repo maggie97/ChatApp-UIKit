@@ -19,7 +19,9 @@
 		4D8163DC2528DE24008DE067 /* MessagChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8163DB2528DE24008DE067 /* MessagChat.swift */; };
 		4D8164462528F4B8008DE067 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8164452528F4B8008DE067 /* RegisterViewController.swift */; };
 		4D97A034252B8A4500EC7DC5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D97A033252B8A4500EC7DC5 /* GoogleService-Info.plist */; };
-		4DCB1AE2252A6D0D00E09006 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB1AE1252A6D0D00E09006 /* Database.swift */; };
+		4D97A038252BEB5A00EC7DC5 /* UsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D97A037252BEB5A00EC7DC5 /* UsersTableViewController.swift */; };
+		4D97A03A252C20E100EC7DC5 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D97A039252C20E100EC7DC5 /* UserTableViewCell.swift */; };
+		4DCB1AE2252A6D0D00E09006 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB1AE1252A6D0D00E09006 /* DatabaseManager.swift */; };
 		4DCB1AEF252A835300E09006 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB1AEE252A835300E09006 /* Friend.swift */; };
 		4DD5C1B125296D6500A6ECD3 /* ContactsFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DD5C1B025296D6500A6ECD3 /* ContactsFlow.storyboard */; };
 		4DD5C1BA25297ECA00A6ECD3 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD5C1B925297ECA00A6ECD3 /* ContactsTableViewController.swift */; };
@@ -66,7 +68,9 @@
 		4D8163DB2528DE24008DE067 /* MessagChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagChat.swift; sourceTree = "<group>"; };
 		4D8164452528F4B8008DE067 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4D97A033252B8A4500EC7DC5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		4DCB1AE1252A6D0D00E09006 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		4D97A037252BEB5A00EC7DC5 /* UsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewController.swift; sourceTree = "<group>"; };
+		4D97A039252C20E100EC7DC5 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		4DCB1AE1252A6D0D00E09006 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		4DCB1AEE252A835300E09006 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		4DD5C1B025296D6500A6ECD3 /* ContactsFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ContactsFlow.storyboard; sourceTree = "<group>"; };
 		4DD5C1B925297ECA00A6ECD3 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
@@ -195,7 +199,7 @@
 				4D8163B62528DA88008DE067 /* Storyboard.swift */,
 				4D8163BB2528DAA2008DE067 /* IdentifiersView.swift */,
 				4D8163DB2528DE24008DE067 /* MessagChat.swift */,
-				4DCB1AE1252A6D0D00E09006 /* Database.swift */,
+				4DCB1AE1252A6D0D00E09006 /* DatabaseManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,9 +208,11 @@
 			isa = PBXGroup;
 			children = (
 				4D8163AC2528D453008DE067 /* LoginViewController.swift */,
+				4D97A037252BEB5A00EC7DC5 /* UsersTableViewController.swift */,
 				4D81636B25283417008DE067 /* ContactItemViewCell.swift */,
 				4D8164452528F4B8008DE067 /* RegisterViewController.swift */,
 				4DD5C1B925297ECA00A6ECD3 /* ContactsTableViewController.swift */,
+				4D97A039252C20E100EC7DC5 /* UserTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -479,15 +485,17 @@
 				4DCB1AEF252A835300E09006 /* Friend.swift in Sources */,
 				4D8164462528F4B8008DE067 /* RegisterViewController.swift in Sources */,
 				4DD5C1BA25297ECA00A6ECD3 /* ContactsTableViewController.swift in Sources */,
+				4D97A03A252C20E100EC7DC5 /* UserTableViewCell.swift in Sources */,
 				4D8163BC2528DAA2008DE067 /* IdentifiersView.swift in Sources */,
 				4D8163B72528DA88008DE067 /* Storyboard.swift in Sources */,
 				4D81637325283441008DE067 /* User.swift in Sources */,
 				4DF484302527FD35008B1386 /* ChatApp.xcdatamodeld in Sources */,
+				4D97A038252BEB5A00EC7DC5 /* UsersTableViewController.swift in Sources */,
 				4D8163B22528DA60008DE067 /* Autenticaton.swift in Sources */,
 				4DF484262527FD35008B1386 /* AppDelegate.swift in Sources */,
 				4D81636D25283417008DE067 /* ContactItemViewCell.swift in Sources */,
 				4D8163DC2528DE24008DE067 /* MessagChat.swift in Sources */,
-				4DCB1AE2252A6D0D00E09006 /* Database.swift in Sources */,
+				4DCB1AE2252A6D0D00E09006 /* DatabaseManager.swift in Sources */,
 				4DF484282527FD35008B1386 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -641,7 +649,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -658,6 +666,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SL5XW6F9R2;
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -678,6 +687,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SL5XW6F9R2;
 				INFOPLIST_FILE = ChatApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -699,7 +709,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ChatAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -721,7 +731,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ChatAppTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -742,6 +752,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ChatAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -762,6 +773,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ChatAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
